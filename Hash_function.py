@@ -28,3 +28,25 @@ insert(HashTable, 21, 'Punjab')
 insert(HashTable, 21, 'Noida')
 
 display_hash(HashTable)
+
+
+OR 
+
+import hashlib
+
+def hash_function(message):
+    # Create a new SHA-256 hash object
+    hash_object = hashlib.sha256()
+
+    # Convert the message to bytes and feed it to the hash object
+    hash_object.update(message.encode())
+
+    # Get the hash value in hexadecimal format
+    hash_value = hash_object.hexdigest()
+
+    return hash_value
+
+# Example usage
+message = "Hello, world!"
+hashed_message = hash_function(message)
+print("Hash value:", hashed_message)
